@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  modules: [
+    '@pinia/nuxt',
+    '@vueuse/nuxt'
+  ],
+  css: ['~/assets/css/main.css'],
   nitro: {
     routeRules: {
       "/**": {
@@ -18,4 +23,15 @@ export default defineNuxtConfig({
       port: 3000,
     },
   },
+  ssr: false,
+  app: {
+    head: {
+      title: 'Personal Notes Organizer',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'A personal notes organizer app' }
+      ]
+    }
+  }
 });
